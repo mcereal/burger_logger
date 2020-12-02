@@ -11,11 +11,11 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
+router.post("/api/burgers", (req, res) => {
   burger.create([req.body.name], (result) => res.json({ id: result.insertId }));
 });
 
-router.put("/:id", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
   const condition = `id = ${req.body.devoured}`;
 
   burger.create(
@@ -33,7 +33,7 @@ router.put("/:id", (req, res) => {
   );
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/api/burgers/:id", (req, res) => {
   const condition = `id = ${req.body.id}`;
 
   burger.delete(condition, (result) => {
