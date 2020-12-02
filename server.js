@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const burgerController = require("./controllers/burgerController");
 const burger = require("./models/burger.js");
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -18,11 +18,10 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 app.get("/", (req, res) => {
-  burger.selectAll((data) => {
+  burger.all((data) => {
     const hbsObject = {
       burgers: data,
     };
-    console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
