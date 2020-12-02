@@ -17,16 +17,8 @@ const orm = {
     });
   },
 
-  update: (table, col, bool, cb) => {
-    const query = `UPDATE ${table} SET devoured = true WHERE ${bool}`;
-    connection.query(query, (error, result) => {
-      if (error) throw error;
-      cb(result);
-    });
-  },
-
-  delete: (table, bool, cb) => {
-    const query = `DELETE FROM ${table} WHERE ${bool}`;
+  update: (table, burgerName, cb) => {
+    const query = `UPDATE ${table} SET devoured = true WHERE burger_type = ${burgerName}`;
     connection.query(query, (error, result) => {
       if (error) throw error;
       cb(result);
