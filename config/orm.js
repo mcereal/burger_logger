@@ -17,8 +17,8 @@ const orm = {
     });
   },
 
-  update: (table, burgerName, cb) => {
-    const query = `UPDATE ${table} SET devoured = true WHERE burger_type = ${burgerName}`;
+  update: (table, columnValue, condition, cb) => {
+    const query = `UPDATE ${table} SET devoured = true WHERE ${condition}`;
     connection.query(query, (error, result) => {
       if (error) throw error;
       cb(result);

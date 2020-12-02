@@ -16,9 +16,9 @@ router.post("/api/burgers", (req, res) => {
 });
 
 router.put("/api/burgers/:id", (req, res) => {
-  const condition = `id = ${req.body.devoured}`;
+  const condition = `id = ${req.params.id}`;
 
-  burger.create(
+  burger.update(
     {
       devoured: req.body.devoured,
     },
@@ -32,17 +32,4 @@ router.put("/api/burgers/:id", (req, res) => {
     }
   );
 });
-
-router.delete("/api/burgers/:id", (req, res) => {
-  const condition = `id = ${req.body.id}`;
-
-  burger.delete(condition, (result) => {
-    if (result.affectedRows == 0) {
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
-
 module.exports = router;
