@@ -1,5 +1,5 @@
 $(() => {
-  $(".devour").on("click", (event) => {
+  $(".devour").on("click", function (event) {
     const id = $(this).data("id");
     const newDevour = $(this).data("newdevour");
 
@@ -18,7 +18,6 @@ $(() => {
 
   $("#add-burger").on("submit", (event) => {
     event.preventDefault();
-
     const addBurger = {
       name: $("#burger").val().trim(),
     };
