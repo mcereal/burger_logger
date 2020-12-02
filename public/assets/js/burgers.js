@@ -11,7 +11,6 @@ $(() => {
       type: "PUT",
       data: newDevouredBurger,
     }).then(function () {
-      console.log("changed devoured to", newDevour);
       location.reload();
     });
   });
