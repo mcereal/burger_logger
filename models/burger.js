@@ -1,27 +1,27 @@
 const orm = require("../config/orm.js");
 
 const burger = {
-  all: function (callback) {
+  all: function (cb) {
     orm.all("burgers", function (result) {
-      callback(result);
+      cb(result);
     });
   },
 
-  create: function (column, callback) {
+  create: function (column, cb) {
     orm.create("burgers", column, function (result) {
-      callback(result);
+      cb(result);
     });
   },
 
-  update: function (columnValue, condition, callback) {
+  update: function (columnValue, condition, cb) {
     orm.update("burgers", columnValue, condition, function (result) {
-      callback(result);
+      cb(result);
     });
   },
 
-  delete: function (condition, callback) {
+  delete: function (condition, cb) {
     orm.delete("burgers", condition, function (result) {
-      callback(result);
+      cb(result);
     });
   },
 };
