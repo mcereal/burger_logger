@@ -19,26 +19,14 @@ $(() => {
   $("#add-burger").on("submit", (event) => {
     event.preventDefault();
 
-    const newBurger = {
+    const addBurger = {
       name: $("#burger").val().trim(),
     };
 
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newBurger,
+      data: addBurger,
     }).then(() => {
-      console.log("new burger");
-      location.reload();
-    });
-  });
-
-  $(".delete").on("click", (event) => {
-    const id = $(this).data("id");
-
-    $.ajax("/api/burgers/" + id, {
-      type: "DELETE",
-    }).then(() => {
-      console.log("deleted burger", id);
       location.reload();
     });
   });
