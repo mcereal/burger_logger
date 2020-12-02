@@ -1,4 +1,3 @@
-  
 USE burgers_db;
 
 INSERT INTO burgers (burger_type)
@@ -8,4 +7,4 @@ INSERT INTO burgers (burger_type)
 VALUES ("cheeseburger");
 
 INSERT INTO burgers (burger_type)
-VALUES ("veggieburger");
+VALUES ("baconburger");
