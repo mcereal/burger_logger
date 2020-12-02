@@ -24,11 +24,8 @@ router.put("/api/burgers/:id", (req, res) => {
     },
     condition,
     (result) => {
-      if (result.changedRows == 0) {
-        return res.status(404).end();
-      } else {
-        res.status(200).end();
-      }
+      if (result.changedRows == 0) res.status(404).end();
+      else res.status(200).end();
     }
   );
 });

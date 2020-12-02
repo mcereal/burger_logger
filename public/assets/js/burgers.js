@@ -3,27 +3,20 @@ $(() => {
     const id = $(this).data("id");
     const newDevour = $(this).data("newdevour");
 
-    const newDevouredBurger = {
-      devoured: newDevour,
-    };
-
-    $.ajax("/api/burgers/" + id, {
+    $.ajax(`/api/burgers/ ${id}`, {
       type: "PUT",
-      data: newDevouredBurger,
-    }).then(function () {
+      data: { devoured: newDevour },
+    }).then(() => {
       location.reload();
     });
   });
 
   $("#add-burger").on("submit", (event) => {
     event.preventDefault();
-    const addBurger = {
-      name: $("#burger").val().trim(),
-    };
 
     $.ajax("/api/burgers", {
       type: "POST",
-      data: addBurger,
+      data: { name: $("#burger").val().trim() },
     }).then(() => {
       location.reload();
     });
