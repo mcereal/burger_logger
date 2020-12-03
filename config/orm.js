@@ -18,7 +18,7 @@ const orm = {
   },
 
   update: (table, columnValue, condition, cb) => {
-    const query = `UPDATE ${table} SET devoured = true WHERE ${condition}`;
+    const query = `UPDATE ${table} SET ${columnValue} = true WHERE ${condition}`;
     connection.query(query, (error, result) => {
       if (error) throw error;
       cb(result);
