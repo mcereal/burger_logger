@@ -9,8 +9,8 @@ const orm = {
     });
   },
 
-  create: (table, col, cb) => {
-    const query = `INSERT INTO ${table} (burger_type, devoured) VALUES ('${col.toString()}', false);`;
+  create: (table, col1, col2, input, cb) => {
+    const query = `INSERT INTO ${table} (${col1}, ${col2}) VALUES ('${input.toString()}', false);`;
     connection.query(query, (error, result) => {
       if (error) throw error;
       cb(result);
