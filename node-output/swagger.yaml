@@ -1,0 +1,10 @@
+openapi: 3.0.0
+info:
+  title: PomoDuck-Go
+  description: PomoDuck- Go API
+  version: "1"
+servers:
+- url: https://virtserver.swaggerhub.com/TomatoPals/PomoDuck-Go/1
+  description: SwaggerHub API Auto Mocking
+paths: {}
+components: {}
